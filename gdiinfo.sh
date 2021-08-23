@@ -11,7 +11,7 @@ release_date=$(/usr/bin/xxd -s 0x60 -l 8 "$1" | cut -c 52- | tr -d '\n')
 maker_id=$(/usr/bin/xxd -s 0x80 -l 16 "$1" | cut -c 52- | tr -d '\n')
 game_title=$(/usr/bin/xxd -s 0x90 -l 128 "$1" | cut -c 52- | tr -d '\n')
 
-echo "Path:           $(dirname $1)"
+echo "Path:           $(dirname "$1")"
 echo "Hardware ID:    $hardware_id"
 echo "Vendor ID:      $hardware_vendor_id"
 echo "Media ID:       $media_id"
